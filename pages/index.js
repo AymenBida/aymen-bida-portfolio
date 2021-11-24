@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 const Home = () => {
-  return null;
+  return <main data-cy='main'></main>;
 };
 
 export default Home;
