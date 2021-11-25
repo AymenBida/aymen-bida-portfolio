@@ -1,11 +1,11 @@
 context("Layout component testing", () => {
   describe("Layout should render children component inside", () => {
-    beforeEach(() => {
+    before(() => {
       cy.visit("/");
     });
 
-    it('The main content should be there', () => {
+    it("The main content should be there", () => {
       cy.get("[data-cy=main]").should("exist");
-    })
+    });
   });
 });
