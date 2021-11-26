@@ -11,6 +11,8 @@ context("Header component testing", () => {
     it("should have a list of three links", () => {
       cy.get("nav ul li[data-cy=nav-item]").should("have.length", 3);
     });
+
+    
   });
 });
 
