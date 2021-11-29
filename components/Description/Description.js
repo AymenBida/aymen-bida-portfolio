@@ -7,14 +7,14 @@ const Description = ({ socialLink }) => {
   return (
     <>
       {socialLink ? (
-        <p>
+        <>
           {descriptionWithLink}{" "}
           <Link href={socialLink}>
-            <a>my Github</a>
+            <a target="_blank">my Github</a>
           </Link>
-        </p>
+        </>
       ) : (
-        <p>{descriptionWithoutLink}</p>
+        descriptionWithoutLink
       )}
     </>
   );
