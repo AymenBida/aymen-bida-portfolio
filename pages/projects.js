@@ -20,3 +20,5 @@ export default projects;
 // TODO: Make Projects page fetch data from github API
 
 // TODO: Create genral css and theme specific css files when styling
+
+// TODO: Later create a tool to create portfolios
