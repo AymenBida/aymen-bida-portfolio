@@ -41,8 +41,6 @@ const Projects = () => {
 
 export default Projects;
 
-// TODO: Create Projects page
-// TODO: Make Projects page fetch data from github API
 
 // TODO: Create genral css and theme specific css files when styling
 
