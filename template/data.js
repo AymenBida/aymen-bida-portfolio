@@ -1,5 +1,5 @@
 export const social = {
-  github: "https://github.com/AymenBida",
+  github: "AymenBida",
 };
 
 export const head = {
