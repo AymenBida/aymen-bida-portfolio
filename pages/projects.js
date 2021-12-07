@@ -1,21 +1,10 @@
-import { useEffect, useState, useLayoutEffect } from "react";
+import { useContext } from "react";
 import { projectsPage, social } from "../template/data";
 import Description from "../components/Description/Description";
-import getRepos from "../lib/fetchProjects";
+import { ProjectsContext } from "./_app";
 
 const Projects = () => {
-  const [projects, setProjects] = useState([]);
-
-  useLayoutEffect(() => {
-    if (sessionStorage.getItem("repos")) {
-      setProjects(JSON.parse(sessionStorage.getItem("repos")));
-    } else {
-      getRepos().then((repos) => {
-        setProjects(repos);
-        sessionStorage.setItem("repos", JSON.stringify(repos));
-      });
-    }
-  }, []);
+  const projects = useContext(ProjectsContext);
 
   return (
     <div className="container" data-cy="container">
@@ -30,7 +19,6 @@ const Projects = () => {
           ? projects.map((project) => (
               <div key={project.id}>
                 <h2>{project.name}</h2>
-                {console.log(project)}
               </div>
             ))
           : "No projects found"}
@@ -40,7 +28,6 @@ const Projects = () => {
 };
 
 export default Projects;
-
 
 // TODO: Create genral css and theme specific css files when styling
 
