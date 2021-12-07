@@ -26,12 +26,14 @@ const Projects = () => {
         <Description socialLink={social.github}></Description>
       </p>
       <div>
-        {projects.map((project) => (
-          <div key={project.id}>
-            <h2>{project.name}</h2>
-            {console.log(project)}
-          </div>
-        ))}
+        {projects.length > 0
+          ? projects.map((project) => (
+              <div key={project.id}>
+                <h2>{project.name}</h2>
+                {console.log(project)}
+              </div>
+            ))
+          : "No projects found"}
       </div>
     </div>
   );
