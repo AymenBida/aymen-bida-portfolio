@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useLayoutEffect } from "react";
 import { projectsPage, social } from "../template/data";
 import Description from "../components/Description/Description";
 import getRepos from "../lib/fetchProjects";
@@ -6,11 +6,15 @@ import getRepos from "../lib/fetchProjects";
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
-  useEffect(() => {
-    getRepos().then((repos) => {
-      setProjects(repos);
-      localStorage.setItem("projects", JSON.stringify(repos));
-    });
+  useLayoutEffect(() => {
+    if (sessionStorage.getItem("repos")) {
+      setProjects(JSON.parse(sessionStorage.getItem("repos")));
+    } else {
+      getRepos().then((repos) => {
+        setProjects(repos);
+        sessionStorage.setItem("repos", JSON.stringify(repos));
+      });
+    }
   }, []);
 
   return (
@@ -23,7 +27,10 @@ const Projects = () => {
       </p>
       <div>
         {projects.map((project) => (
-          <h2 key={project.id}>{project.name}</h2>
+          <div key={project.id}>
+            <h2>{project.name}</h2>
+            {console.log(project)}
+          </div>
         ))}
       </div>
     </div>
