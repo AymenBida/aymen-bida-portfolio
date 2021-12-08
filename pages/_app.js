@@ -14,7 +14,8 @@ const MyApp = ({ Component, pageProps }) => {
     } else {
       getRepos().then((repos) => {
         setProjects(repos);
-        sessionStorage.setItem("repos", JSON.stringify(repos));
+        if (repos.length > 0)
+          sessionStorage.setItem("repos", JSON.stringify(repos));
       });
     }
   }, []);

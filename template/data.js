@@ -2,6 +2,11 @@ export const social = {
   github: "AymenBida",
 };
 
+export const images = {
+  defaultImage: "/no_image.png",
+  blurImage: "/blur.png",
+};
+
 export const head = {
   title: "Aymen Bida Portfolio",
   description: "This is a portfolio",

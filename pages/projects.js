@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { projectsPage, social } from "../template/data";
 import Description from "../components/Description/Description";
 import { ProjectsContext } from "./_app";
+import ProjectsList from "../components/ProjectsList/ProjectsList";
 
 const Projects = () => {
   const projects = useContext(ProjectsContext);
@@ -14,15 +15,13 @@ const Projects = () => {
       <p className="description" data-cy="description">
         <Description socialLink={social.github}></Description>
       </p>
-      <div>
-        {projects.length > 0
-          ? projects.map((project) => (
-              <div key={project.id}>
-                <h2>{project.name}</h2>
-              </div>
-            ))
-          : "No projects found"}
-      </div>
+      <>
+        {projects.length > 0 ? (
+          <ProjectsList projects={projects} />
+        ) : (
+          "No projects found"
+        )}
+      </>
     </div>
   );
 };
