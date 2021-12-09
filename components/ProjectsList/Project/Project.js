@@ -1,6 +1,8 @@
 import { images } from "../../../template/data";
 import Image from "next/image";
 import styles from "./Project.module.scss";
+import TagList from "../../TagList/TagList";
+import Button from "../../Button/Button";
 
 const Project = ({ project }) => {
   return (
@@ -18,6 +20,11 @@ const Project = ({ project }) => {
       <div className={styles.card__content}>
         <h2 className={styles.card__title}>{project.name}</h2>
         <p className={styles.card__description}>{project.description}</p>
+        <TagList contents={project.topics} />
+        <ul>
+          <Button text="Live Demo" link={project.homepage} />
+          <Button text="Github" link={project.html_url} />
+        </ul>
       </div>
     </div>
   );
