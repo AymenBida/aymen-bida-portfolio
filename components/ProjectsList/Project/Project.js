@@ -15,8 +15,10 @@ const Project = ({ project }) => {
           objectFit="cover"
         />
       </div>
-      <h2 className={styles.card__title}>{project.name}</h2>
-      <p className={styles.card__description}>{project.description}</p>
+      <div className={styles.card__content}>
+        <h2 className={styles.card__title}>{project.name}</h2>
+        <p className={styles.card__description}>{project.description}</p>
+      </div>
     </div>
   );
 };

@@ -1,5 +1,11 @@
 .list {
+  @media only screen and (min-width: 576px) {
+    padding: 6rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  padding: 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-gap: 3rem;
 }
