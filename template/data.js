@@ -22,4 +22,8 @@ export const projectsPage = {
     descriptionWithoutLink:
       "You can find here my pinned projects fetched directly from Github.",
   },
+  projects: {
+    TryItButton: "Live Demo",
+    SourceCode: "Github",
+  },
 };

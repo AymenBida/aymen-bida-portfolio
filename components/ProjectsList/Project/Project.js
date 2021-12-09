@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./Project.module.scss";
 import TagList from "../../TagList/TagList";
 import Button from "../../Button/Button";
+import { projectsPage } from "../../../template/data";
 
 const Project = ({ project }) => {
   return (
@@ -22,8 +23,14 @@ const Project = ({ project }) => {
         <p className={styles.card__description}>{project.description}</p>
         <TagList contents={project.topics} />
         <ul>
-          <Button text="Live Demo" link={project.homepage} />
-          <Button text="Github" link={project.html_url} />
+          <Button
+            text={projectsPage.projects.TryItButton}
+            link={project.homepage}
+          />
+          <Button
+            text={projectsPage.projects.SourceCode}
+            link={project.html_url}
+          />
         </ul>
       </div>
     </div>
