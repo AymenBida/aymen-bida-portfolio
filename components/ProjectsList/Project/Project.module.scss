@@ -1,0 +1,25 @@
+.card {
+  min-height: fit-content;
+
+  &__image {
+    position: relative;
+    width: 100%;
+    min-height: 12rem;
+  }
+
+  &__content {
+    max-height: 50%;
+  }
+
+  &__title {
+    font-size: 2rem;
+    color: blue;
+    margin: 0;
+  }
+
+  &__description {
+    color: black;
+    font-size: 1rem;
+    margin: 0;
+  }
+}
